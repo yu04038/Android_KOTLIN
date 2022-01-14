@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BMICalculate">
         <activity
+            android:name=".SubActivity"
+            android:exported="false" />
+        <activity
             android:name=".BmiActivity"
             android:exported="false" />
         <activity

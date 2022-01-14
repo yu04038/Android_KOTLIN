@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.button1.setOnClickListener{
             startActivity(Intent(this@MainActivity, BmiActivity::class.java))
+            finish()
         }
     }
 }
