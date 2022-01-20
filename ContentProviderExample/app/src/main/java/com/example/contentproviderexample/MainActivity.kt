@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
                     cols, "${ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME} Like ?",
                     Array(1){"%$p0%"},
                     ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME)
-                
+
                 adapter.changeCursor(rs)
                 return false
             }
