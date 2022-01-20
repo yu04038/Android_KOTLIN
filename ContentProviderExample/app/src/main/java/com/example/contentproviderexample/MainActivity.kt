@@ -16,7 +16,7 @@ import org.jetbrains.annotations.Contract
 
 class MainActivity : AppCompatActivity() {
 
-    val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+    private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
     var cols = listOf<String>(
         ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME,
