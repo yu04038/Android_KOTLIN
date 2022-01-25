@@ -23,5 +23,5 @@ class SingleMovieViewModel(private val movieRepository: MovieDetailsRepository, 
         compositeDisposable.dispose()
     }
 
-    
+
 }
