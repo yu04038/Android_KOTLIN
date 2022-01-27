@@ -3,6 +3,16 @@ package com.example.kotlinsample
 fun main() {
     helloWorld()
     println(add(4,5))
+
+    // 3. String template
+    val name = "yong jin"
+    println("my name is $name")
+
+    // 띄어쓰기를 하기 싫다면 대괄호로 변수 범위 설정이 가능하다.
+    println("my name is ${name}I'm 25")
+
+    
+
 }
 
 // 1. 함수
