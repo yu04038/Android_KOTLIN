@@ -33,7 +33,7 @@ class MyNumberViewModel : ViewModel() {
         _currentValue.value = 0
     }
 
-    // 뷰모델이 가지고 있는 값을 변경하는 메소드 
+    // 뷰모델이 가지고 있는 값을 변경하는 메소드
     fun updateValue(actionType: ActionType, input: Int) {
         when(actionType) {
             ActionType.PLUS ->
