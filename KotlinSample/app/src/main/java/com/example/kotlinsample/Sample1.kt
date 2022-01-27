@@ -15,6 +15,9 @@ fun main() {
 
     forAndWhile()
 
+    nullCheck()
+
+    ignoreNulls("hi")
 }
 
 // 1. 함수
@@ -125,5 +128,44 @@ fun forAndWhile() {
     while(index < 10) {
         println("current index = $index")
         index++
+    }
+}
+
+// 7. Nullable, NonNull
+fun nullCheck() {
+    // NPE : Null Pointer Exception
+    // compile 에서 오류를 알려줌으로써 runtime 에서 생기는 오류를 막을 수가 있다.
+
+    var name : String = "yong jin" // null 이면 안되는 타입!
+
+    var nullName : String? = null // error 안뜸
+
+    var nameInUpperCase = name.toUpperCase()
+
+    // nullName Nonnull -> Uppercase
+    // nullName null -> null
+    var nullNameInUpperCase = nullName?.toUpperCase()
+
+    // ?:
+    // lastName 이 null 일 경우 default 값 제시
+    val lastName : String? = null
+
+    val fullName = name + " " + (lastName?: "No lastName")
+    println(fullName)
+
+
+}
+
+// !!
+fun ignoreNulls(str: String?) {
+    // 컴파일러에게 절대 null 일리가 없으므로 null 아니라고 생각하라는 뜻
+    var notNull : String = str!!
+    var upper = notNull.toUpperCase()
+
+    val email :String? = "yu04038@gmail.com"
+
+    // email null 이 아니라면? let 실행
+    email?.let{
+        println("email is $it")
     }
 }
