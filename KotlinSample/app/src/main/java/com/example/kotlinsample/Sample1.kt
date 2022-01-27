@@ -15,3 +15,16 @@ fun helloWorld() : Unit{
 fun add(a: Int, b: Int): Int {
     return a + b
 }
+
+// 2. val vs var
+// val = value (바뀌지 않는 것!)
+
+fun hi() {
+    val a: Int = 10
+    var b: Int = 9
+    b = 100
+
+    // 이렇게 해도 타입 추론 가능
+    val c = 100
+    val d = "yong jin"
+}
