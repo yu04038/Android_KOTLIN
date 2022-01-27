@@ -11,7 +11,7 @@ fun main() {
     // 띄어쓰기를 하기 싫다면 대괄호로 변수 범위 설정이 가능하다.
     println("my name is ${name}I'm 25")
 
-    
+    checkNumber(1)
 
 }
 
@@ -37,4 +37,43 @@ fun hi() {
     // 이렇게 해도 타입 추론 가능
     val c = 100
     val d = "yong jin"
+}
+
+// 4. 조건식
+fun maxBy(a: Int, b: Int) :Int {
+
+    return if (a > b) {
+        a
+    } else {
+        b
+    }
+}
+
+fun maxBy2(a: Int, b: Int) = if (a>b) a else b
+
+fun checkNumber(score: Int) {
+    //switch 역할!
+    when(score) {
+        0 -> println("this is 0")
+        1 -> println("this is 1")
+        // 복수 정답 인정 가능
+        2,3 -> println("this is 2 or 3")
+        // 아무것도 아닐 때!
+        else -> println("I don't know")
+    }
+
+    var b = when(score) {
+        1 -> 1
+        2 -> 2
+        // 반드시 else 를 써줘야 한다!
+        else -> 3
+    }
+
+    println("b : $b")
+
+    when(score){
+        in 90..100 -> println("You are genius")
+        in 10..80 -> println("Not Bad")
+        else -> println("Ok")
+    }
 }
