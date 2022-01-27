@@ -77,3 +77,22 @@ fun checkNumber(score: Int) {
         else -> println("Ok")
     }
 }
+
+// 5. Array, List
+// Array : 기본적으로 정해져 있는 사이즈 있다. 메모리가 할당이 되어 나오므로 미리 지정해줘야 한다. mutable
+// List : MutableList vs ImmutableList
+
+fun array() {
+    val array = arrayOf(1, 2, 3)
+    val list = listOf(1, 2, 3)
+
+    val array2 = arrayOf(1, "d", 0.2)
+
+    array[0] = 3
+    var result = list[0]
+
+    // val로 쓸수 있는데, 이는 arrayList의 참조값이 변하지 않기 때문이다.
+    var arrayList = arrayListOf<Int>()
+    arrayList.add(10)
+    arrayList.add(20)
+}
