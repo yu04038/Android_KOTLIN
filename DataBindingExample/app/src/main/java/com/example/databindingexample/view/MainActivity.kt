@@ -1,7 +1,8 @@
-package com.example.databindingexample
+package com.example.databindingexample.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.databindingexample.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
