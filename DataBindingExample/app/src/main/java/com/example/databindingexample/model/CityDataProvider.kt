@@ -18,4 +18,6 @@ class CityDataProvider {
         cities.add(City("Sydney", R.drawable.sydney, 5_300_000))
         cities.add(City("Tokyo", R.drawable.tokyo, 13_900_000))
     }
+
+    fun getCities() = cities
 }
