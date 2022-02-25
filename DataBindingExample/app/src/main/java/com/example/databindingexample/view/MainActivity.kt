@@ -5,9 +5,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.core.content.res.ResourcesCompat
 import androidx.lifecycle.Observer
-import com.example.databindingexample.R
 import com.example.databindingexample.databinding.ActivityMainBinding
-import com.example.databindingexample.model.CityDataProvider
 import com.example.databindingexample.viewmodel.CityViewModel
 
 class MainActivity : AppCompatActivity() {
