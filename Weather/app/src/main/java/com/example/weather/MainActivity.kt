@@ -1,4 +1,4 @@
-package com.example.ourtodo
+package com.example.weather
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
