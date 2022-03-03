@@ -26,8 +26,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         if (checkLocationPermission(this)) {
+            // 여기다가 권한 승인했을 때 넣어주면 됨
             Log.e(TAG, "권한 승인")
         } else {
+            // 여기다가 권한 거부했을 때 넣어주면 됨
             Log.e(TAG, "권한 거부")
         }
     }
