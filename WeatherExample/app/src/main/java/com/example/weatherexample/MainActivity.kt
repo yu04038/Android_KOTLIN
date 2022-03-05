@@ -11,23 +11,27 @@ import android.os.Looper
 import android.util.Log
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
+import com.example.weatherexample.databinding.ActivityMainBinding
 import com.google.android.gms.location.*
 
 class MainActivity : AppCompatActivity() {
 
     private var mFusedLocationProviderClient: FusedLocationProviderClient? = null // 현재 위치를 가져오기 위한 변수
     lateinit var mLastLocation: Location // 위치 값을 가지고 있는 객체
-    internal lateinit var mLocationRequest: LocationRequest // 위치 정보 요청의 매개변수를 저장하는
+    internal lateinit var mLocationRequest: LocationRequest // 위치 정보 요청의 매개변수를 저장
     private val REQUEST_PERMISSION_LOCATION = 10
+
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
         mLocationRequest =  LocationRequest.create().apply {
-
+            interval = 2000
             priority = LocationRequest.PRIORITY_HIGH_ACCURACY
-
         }
 
         if (checkPermissionForLocation(this)) {
@@ -75,9 +79,11 @@ class MainActivity : AppCompatActivity() {
         }
         // 기기의 위치에 관한 정기 업데이트를 요청하는 메서드 실행
         // 지정한 루퍼 스레드(Looper.myLooper())에서 콜백(mLocationCallback)으로 위치 업데이트를 요청
-        mFusedLocationProviderClient!!.requestLocationUpdates(mLocationRequest, mLocationCallback,
-            Looper.myLooper()!!
-        )
+        Looper.myLooper()?.let {
+            mFusedLocationProviderClient!!.requestLocationUpdates(mLocationRequest, mLocationCallback,
+                it
+            )
+        }
     }
 
     // 시스템으로 부터 위치 정보를 콜백으로 받음
